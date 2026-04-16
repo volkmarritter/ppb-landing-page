@@ -111,8 +111,17 @@
     }
     .btn-ghost:hover { background: var(--blue-light); }
 
-    /* ── HERO CARD MOCKUP ── */
+    /* ── HERO SCREENSHOT ── */
     .hero-visual { position: relative; }
+    .screenshot-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+    }
+    .screenshot-wrap img {
+      width: 100%; height: auto; display: block;
+    }
     .mock-card {
       background: var(--white);
       border-radius: 16px;
@@ -402,55 +411,13 @@
       </div>
     </div>
 
-    <!-- MOCKUP -->
+    <!-- SCREENSHOT -->
     <div class="hero-visual">
       <div class="floating-tag ft-1">
-        <span class="ft-dot"></span> 6 parameters configured
+        <span class="ft-dot"></span> Basic &amp; Pro mode
       </div>
-      <div class="mock-card">
-        <div class="mock-header">
-          <div class="mock-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" stroke-width="1.5"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <div>
-            <div class="mock-title">Portfolio Prompt Builder</div>
-            <div class="mock-sub">Strategic Asset Allocation</div>
-          </div>
-        </div>
-        <div class="mock-grid">
-          <div class="mock-field">
-            <label>Base Currency</label>
-            <div class="val">CHF</div>
-          </div>
-          <div class="mock-field">
-            <label>Risk Profile</label>
-            <div class="val">Balanced</div>
-          </div>
-          <div class="mock-field">
-            <label>Equity Alloc.</label>
-            <div class="val">50%</div>
-          </div>
-          <div class="mock-field">
-            <label>Horizon</label>
-            <div class="val">5–10 yrs</div>
-          </div>
-          <div class="mock-field">
-            <label>ETF Count</label>
-            <div class="val">6 ETFs</div>
-          </div>
-          <div class="mock-field">
-            <label>Exchange</label>
-            <div class="val">SIX Swiss</div>
-          </div>
-        </div>
-        <div class="mock-output">
-          <div class="mock-output-label">Generated Prompt</div>
-          Create a strategic asset allocation for a CHF-based investor with a balanced risk profile (50% equity). Use 6 ETFs listed on SIX Swiss Exchange. Apply home bias logic for CHF, assess currency hedging for non-CHF positions, and evaluate synthetic ETF suitability. Provide target allocation, TER estimate, and rebalancing bands...
-        </div>
-        <button class="mock-copy-btn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          Copy to clipboard
-        </button>
+      <div class="screenshot-wrap">
+        <img src="https://volkmarritter.github.io/ppb-landing-page/Screen.png" alt="Portfolio Prompt Builder app screenshot showing strategy selection and generated prompt" />
       </div>
       <div class="floating-tag ft-2">
         <span class="ft-dot"></span> Prompt ready in &lt;5s
