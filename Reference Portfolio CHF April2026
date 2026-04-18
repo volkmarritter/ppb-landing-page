@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referenzportfolio CHF – Renditeorientiert</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1117;
+    --paper: #f7f4ef;
+    --cream: #ede9e1;
+    --rule: #c8bfaa;
+    --accent: #1a3a5c;
+    --accent2: #8b6914;
+    --red: #7c2020;
+    --green: #1a4a2e;
+    --mono: 'IBM Plex Mono', monospace;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --display: 'Playfair Display', Georgia, serif;
+  }
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+background: var(–paper);
+color: var(–ink);
+font-family: var(–serif);
+font-size: 14px;
+line-height: 1.65;
+max-width: 1100px;
+margin: 0 auto;
+padding: 48px 40px 80px;
+}
+
+/* ── HEADER ── */
+.masthead {
+border-top: 3px solid var(–ink);
+border-bottom: 1px solid var(–rule);
+padding: 28px 0 20px;
+margin-bottom: 36px;
+display: grid;
+grid-template-columns: 1fr auto;
+align-items: end;
+gap: 24px;
+}
+.masthead-tag {
+font-family: var(–mono);
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–accent2);
+margin-bottom: 8px;
+}
+.masthead h1 {
+font-family: var(–display);
+font-size: 32px;
+font-weight: 700;
+line-height: 1.15;
+color: var(–accent);
+}
+.masthead-meta {
+text-align: right;
+font-family: var(–mono);
+font-size: 10px;
+color: #666;
+line-height: 1.8;
+}
+.meta-row { display: flex; gap: 32px; margin-top: 16px; }
+.meta-pill {
+background: var(–cream);
+border: 1px solid var(–rule);
+padding: 6px 14px;
+font-family: var(–mono);
+font-size: 10px;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+}
+.meta-pill span { display: block; font-size: 13px; font-family: var(–serif); text-transform: none; letter-spacing: 0; font-weight: 600; color: var(–accent); margin-top: 2px; }
+
+/* ── SECTIONS ── */
+.section {
+margin-bottom: 48px;
+}
+.section-header {
+display: flex;
+align-items: baseline;
+gap: 14px;
+margin-bottom: 18px;
+padding-bottom: 8px;
+border-bottom: 2px solid var(–ink);
+}
+.section-label {
+font-family: var(–mono);
+font-size: 10px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–accent2);
+background: var(–cream);
+border: 1px solid var(–rule);
+padding: 3px 8px;
+white-space: nowrap;
+}
+.section-title {
+font-family: var(–display);
+font-size: 20px;
+font-weight: 600;
+color: var(–accent);
+}
+
+/* ── TABLES ── */
+.table-wrap { overflow-x: auto; }
+table {
+width: 100%;
+border-collapse: collapse;
+font-size: 12.5px;
+}
+thead tr {
+background: var(–ink);
+color: var(–paper);
+}
+thead th {
+font-family: var(–mono);
+font-size: 9.5px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+padding: 10px 12px;
+text-align: left;
+font-weight: 500;
+white-space: nowrap;
+}
+tbody tr {
+border-bottom: 1px solid var(–rule);
+}
+tbody tr:hover { background: var(–cream); }
+tbody td {
+padding: 9px 12px;
+vertical-align: top;
+line-height: 1.45;
+}
+.td-num {
+font-family: var(–mono);
+text-align: right;
+white-space: nowrap;
+}
+.td-center { text-align: center; }
+.weight-cell {
+font-family: var(–mono);
+font-weight: 500;
+font-size: 13px;
+}
+.group-eq { background: rgba(26,58,92,0.04); }
+.group-fi { background: rgba(139,105,20,0.04); }
+.group-alt { background: rgba(26,74,46,0.04); }
+tfoot tr { border-top: 2px solid var(–ink); background: var(–cream); }
+tfoot td {
+padding: 9px 12px;
+font-family: var(–mono);
+font-size: 12px;
+font-weight: 500;
+}
+
+/* chips */
+.chip {
+display: inline-block;
+font-family: var(–mono);
+font-size: 9px;
+letter-spacing: 0.05em;
+padding: 2px 6px;
+border-radius: 2px;
+text-transform: uppercase;
+}
+.chip-syn { background: #e8f0e8; color: #1a4a2e; border: 1px solid #b8d4b8; }
+.chip-phy { background: #e8eeF8; color: #1a3a5c; border: 1px solid #b8c8e8; }
+.chip-acc { background: #f0ece0; color: #6b4f10; border: 1px solid #d4c090; }
+.chip-dis { background: #f5e8e8; color: #7c2020; border: 1px solid #d4a8a8; }
+.chip-hedged { background: #1a3a5c; color: #fff; }
+.chip-unhedged { background: #888; color: #fff; }
+
+/* ── BULLETS ── */
+.bullet-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px 32px;
+}
+.bullet-item {
+display: grid;
+grid-template-columns: 16px 1fr;
+gap: 8px;
+align-items: start;
+padding: 8px 0;
+border-bottom: 1px solid var(–rule);
+font-size: 13px;
+}
+.bullet-num {
+font-family: var(–mono);
+font-size: 10px;
+color: var(–accent2);
+padding-top: 2px;
+}
+strong { color: var(–accent); font-weight: 600; }
+
+/* ── CURRENCY BAR ── */
+.ccy-wrap { display: flex; flex-direction: column; gap: 10px; }
+.ccy-row {
+display: grid;
+grid-template-columns: 80px 1fr 60px 120px;
+align-items: center;
+gap: 12px;
+font-size: 12.5px;
+}
+.ccy-label { font-family: var(–mono); font-weight: 500; font-size: 11px; }
+.bar-track {
+background: var(–cream);
+border: 1px solid var(–rule);
+height: 18px;
+position: relative;
+}
+.bar-fill {
+position: absolute;
+left: 0; top: 0; bottom: 0;
+transition: width 0.4s;
+}
+.bar-chf { background: #1a3a5c; }
+.bar-usd { background: #7c2020; }
+.bar-eur { background: #8b6914; }
+.bar-jpy { background: #1a4a2e; }
+.bar-em  { background: #6b3a7c; }
+.ccy-pct { font-family: var(–mono); font-size: 12px; font-weight: 500; text-align: right; }
+.ccy-note { font-size: 11px; color: #666; font-style: italic; }
+
+/* ── TOP10 ── */
+.top10-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.top10-item {
+display: grid;
+grid-template-columns: 28px 1fr 50px;
+align-items: center;
+gap: 8px;
+padding: 8px 10px;
+background: var(–cream);
+border-left: 3px solid var(–accent);
+font-size: 12.5px;
+}
+.top10-rank { font-family: var(–mono); font-size: 10px; color: var(–accent2); }
+.top10-pct { font-family: var(–mono); font-size: 12px; font-weight: 500; text-align: right; }
+
+/* ── REBALANCING ── */
+.rebal-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+}
+.rebal-card {
+background: var(–cream);
+border: 1px solid var(–rule);
+padding: 18px;
+}
+.rebal-card-title {
+font-family: var(–mono);
+font-size: 9.5px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–accent2);
+margin-bottom: 10px;
+}
+.rebal-card-body { font-size: 12.5px; line-height: 1.6; }
+
+/* ── COST BOX ── */
+.cost-wrap {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 24px;
+}
+.cost-table { width: 100%; }
+.cost-table td { padding: 5px 8px; font-size: 12.5px; border-bottom: 1px solid var(–rule); }
+.cost-table .td-num { font-family: var(–mono); }
+.cost-summary {
+background: var(–accent);
+color: var(–paper);
+padding: 24px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.cost-summary-label { font-family: var(–mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 8px; }
+.cost-summary-num { font-family: var(–display); font-size: 42px; font-weight: 700; line-height: 1; }
+.cost-summary-unit { font-family: var(–mono); font-size: 11px; opacity: 0.7; margin-top: 6px; }
+.cost-note { font-size: 11.5px; margin-top: 12px; opacity: 0.85; line-height: 1.5; }
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+margin-top: 56px;
+padding: 20px 24px;
+border: 1px solid var(–rule);
+background: var(–cream);
+font-size: 11px;
+color: #555;
+line-height: 1.6;
+}
+.disclaimer-title {
+font-family: var(–mono);
+font-size: 9px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–red);
+margin-bottom: 8px;
+}
+
+/* ── LOOK-THROUGH ── */
+.lookt-row {
+display: grid;
+grid-template-columns: 180px 1fr 70px;
+align-items: center;
+gap: 12px;
+padding: 7px 0;
+border-bottom: 1px solid var(–rule);
+font-size: 12.5px;
+}
+.lookt-bar { background: var(–cream); height: 14px; position: relative; }
+.lookt-fill { position: absolute; left: 0; top: 0; bottom: 0; }
+
+@media (max-width: 700px) {
+body { padding: 24px 16px 48px; }
+.bullet-grid { grid-template-columns: 1fr; }
+.top10-grid { grid-template-columns: 1fr; }
+.rebal-grid { grid-template-columns: 1fr; }
+.cost-wrap { grid-template-columns: 1fr; }
+.meta-row { flex-wrap: wrap; }
+.masthead { grid-template-columns: 1fr; }
+}
+
+.footnote { font-size: 11px; color: #777; font-style: italic; margin-top: 10px; line-height: 1.5; }
+.divider { border: none; border-top: 1px solid var(–rule); margin: 32px 0; }
+.info-box {
+background: rgba(26,58,92,0.05);
+border-left: 3px solid var(–accent);
+padding: 12px 16px;
+margin: 14px 0;
+font-size: 12.5px;
+line-height: 1.6;
+}
+</style>
+
+</head>
+<body>
+
+<!-- MASTHEAD -->
+
+<div class="masthead">
+  <div>
+    <div class="masthead-tag">Unabhängige Portfolioanalyse · CFA-Niveau · Referenzdokument</div>
+    <h1>Renditeorientiertes Referenzportfolio<br>Basiswährung CHF</h1>
+    <div class="meta-row">
+      <div class="meta-pill">Risikoappetit<span>Hoch</span></div>
+      <div class="meta-pill">Anlagehorizont<span>≥ 10 Jahre</span></div>
+      <div class="meta-pill">Aktienquote<span>70 %</span></div>
+      <div class="meta-pill">Positionen<span>8 ETFs</span></div>
+    </div>
+  </div>
+  <div class="masthead-meta">
+    Erstellt: April 2025<br>
+    Basiswährung: CHF<br>
+    Instrument: ETF-only<br>
+    Börse: SIX Swiss Exchange (prim.)
+  </div>
+</div>
+
+<!-- SECTION A -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">A</span>
+    <span class="section-title">Tabelle 1 — Zielallokation</span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Anlageklasse</th>
+          <th>Zielgewicht</th>
+          <th>Zweck / Rolle im Portfolio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="group-eq">
+          <td><strong>Aktien USA</strong></td>
+          <td class="td-num weight-cell">30 %</td>
+          <td>Grösster und liquidester Aktienmarkt weltweit; Wachstumskern des Portfolios. Dominiert durch US-Technologie und globale Large-Caps, die in USD notieren.</td>
+        </tr>
+        <tr class="group-eq">
+          <td><strong>Aktien Europa ex CH</strong></td>
+          <td class="td-num weight-cell">15 %</td>
+          <td>Regionale Diversifikation gegenüber USA; Exposure in defensive Sektoren (Energie, Finanzen, Grundstoffe) und günstige Bewertungen. EUR-Währungsexposure teilweise natürlicher Hedge für CHF-Investor.</td>
+        </tr>
+        <tr class="group-eq">
+          <td><strong>Aktien Schweiz (CH)</strong></td>
+          <td class="td-num weight-cell">10 %</td>
+          <td>Gezielter Home Bias: Eliminierung des CHF-Währungsrisikos, Zugang zu defensiven Qualitätstitel (Nestlé, Novartis, Roche). Bewusst begrenzt, um Klumpenrisiko zu vermeiden.</td>
+        </tr>
+        <tr class="group-eq">
+          <td><strong>Aktien Japan</strong></td>
+          <td class="td-num weight-cell">7 %</td>
+          <td>Geringe Korrelation zu westlichen Märkten; strukturelle Reformen (Corporate-Governance-Agenda der TSE) erhöhen Attraktivität. Währungsabsicherung JPY→CHF wird geprüft (siehe Abschnitt D).</td>
+        </tr>
+        <tr class="group-eq">
+          <td><strong>Aktien Emerging Markets</strong></td>
+          <td class="td-num weight-cell">8 %</td>
+          <td>Langfristiger Wachstumstreiber durch demografische Dividende und Urbanisierung; erhöhtes politisches und Währungsrisiko wird durch begrenztes Gewicht kontrolliert.</td>
+        </tr>
+        <tr class="group-fi">
+          <td><strong>Anleihen Global (hedged CHF)</strong></td>
+          <td class="td-num weight-cell">15 %</td>
+          <td>Volatilitätspuffer und Diversifikation; globale Staatsanleihen mit CHF-Absicherung liefern negatives Beta in Risikoabverkäufen. Zinsrisiko moderat; Duration ~6–7 Jahre.</td>
+        </tr>
+        <tr class="group-fi">
+          <td><strong>Anleihen Emerging Markets (USD, unhedged)</strong></td>
+          <td class="td-num weight-cell">5 %</td>
+          <td>Renditeaufschlag gegenüber Industrieländer-Anleihen; bringt Carry und diversifiziert Kreditexposure. USD-Währungsrisiko bewusst akzeptiert (Diversifikationsbeitrag).</td>
+        </tr>
+        <tr class="group-alt">
+          <td><strong>Rohstoffe / Edelmetalle</strong></td>
+          <td class="td-num weight-cell">10 %</td>
+          <td>Inflationsschutz, reale Asset-Diversifikation; Gold als monetäres Sicherheitsnetz in Stressphasen; breiter Commodity-Mix für Zyklus-Exposure.</td>
+        </tr>
+        <tr class="group-fi">
+          <td><strong>Cash / Geldmarkt CHF</strong></td>
+          <td class="td-num weight-cell">0 %</td>
+          <td>Kein strategischer Cashbestand bei 10-jährigem Horizont und hohem Risikoappetit. Liquiditätsreserve wird ausserhalb des Portfolios geführt.</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td class="td-num"><strong>100 %</strong></td>
+          <td>Aktienquote 70 % — innerhalb der Bandbreite 60–80 %</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <p class="footnote">¹ Aktienquote = USA 30 % + Europa ex CH 15 % + CH 10 % + Japan 7 % + EM 8 % = 70 %. Anleihen + EM-Anleihen = 20 %. Rohstoffe = 10 %.</p>
+</div>
+
+<!-- LOOK-THROUGH HINWEIS -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">A+</span>
+    <span class="section-title">Look-through Asset-Allocation-Übersicht</span>
+  </div>
+  <div class="info-box">
+    Da keine breiten globalen Aktienindizes (z. B. MSCI ACWI) eingesetzt werden, sondern direkte regionale ETFs, entspricht die strategische Zielallokation bereits dem effektiven Look-through-Exposure. Die nachfolgende Übersicht fasst das konsolidierte Exposure zusammen und verdeutlicht die regionale Struktur.
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Look-through-Segment</th>
+          <th>Portfoliogewicht</th>
+          <th>Hauptindizes / Instrumente</th>
+          <th>Währungsexposure (vor Hedging)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>US Equities (Large/Mid Cap)</td><td class="td-num">30 %</td><td>S&amp;P 500 / MSCI USA</td><td>USD</td></tr>
+        <tr><td>Developed Europe ex CH Equities</td><td class="td-num">15 %</td><td>MSCI Europe ex Switzerland</td><td>EUR / GBP / SEK mix</td></tr>
+        <tr><td>Swiss Equities</td><td class="td-num">10 %</td><td>SMI / SPI</td><td>CHF (kein FX-Risiko)</td></tr>
+        <tr><td>Japanese Equities</td><td class="td-num">7 %</td><td>MSCI Japan / Topix</td><td>JPY (unhedged, s. Abschnitt D)</td></tr>
+        <tr><td>Emerging Market Equities</td><td class="td-num">8 %</td><td>MSCI EM</td><td>Multi-EM (USD-notiert)</td></tr>
+        <tr><td>Global Investment Grade Bonds</td><td class="td-num">15 %</td><td>FTSE WGBI / Bloomberg Global Agg</td><td>CHF-hedged</td></tr>
+        <tr><td>EM Hard Currency Bonds</td><td class="td-num">5 %</td><td>JP Morgan EMBI</td><td>USD</td></tr>
+        <tr><td>Broad Commodities</td><td class="td-num">7 %</td><td>Bloomberg Commodity Index</td><td>USD (Index-basiert)</td></tr>
+        <tr><td>Gold</td><td class="td-num">3 %</td><td>Spot Gold (physisch besichert)</td><td>USD / CHF-Referenzpreis</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td><strong>Total</strong></td><td class="td-num"><strong>100 %</strong></td><td></td><td></td></tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION B -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">B</span>
+    <span class="section-title">Tabelle 2 — ETF-Umsetzung</span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Anlageklasse</th>
+          <th style="white-space:nowrap">Ziel-%</th>
+          <th>ETF-Name</th>
+          <th>ISIN</th>
+          <th>Ticker (Börse)</th>
+          <th>TER</th>
+          <th>Domizil</th>
+          <th>Replikation</th>
+          <th>Ausschüttung</th>
+          <th>Anteilsklasse Währung</th>
+          <th style="min-width:200px">Kurzkommentar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="group-eq">
+          <td class="td-num td-center">1</td>
+          <td><strong>Aktien USA</strong></td>
+          <td class="td-num weight-cell">30 %</td>
+          <td>iShares Core S&amp;P 500 UCITS ETF (Acc) <em>— CHF Hedged</em></td>
+          <td class="td-num" style="font-size:11px">IE00B3YCGJ38<br><em style="color:#888;font-size:10px">zzgl. CHF-Hdg Anteilsklasse¹</em></td>
+          <td class="td-num">CSPX SW<br><em style="color:#888;font-size:10px">(SIX)</em></td>
+          <td class="td-num">0.07 %</td>
+          <td>Irland</td>
+          <td><span class="chip chip-syn">Synthetisch²</span></td>
+          <td><span class="chip chip-acc">Thes.</span></td>
+          <td>USD / CHF-Hdg</td>
+          <td>Grösster S&amp;P-500-ETF an SIX; sehr hohe Liquidität. Synthetische Replikation (Swap-Struktur) eliminiert US-Quellensteuer-Leakage auf Dividenden für irische UCITS-Struktur — struktureller Renditevorteil gegenüber physischen Varianten. CHF-Hedged-Anteilsklasse eliminiert USD/CHF-Währungsrisiko.</td>
+        </tr>
+        <tr class="group-eq">
+          <td class="td-num td-center">2</td>
+          <td><strong>Aktien Europa ex CH</strong></td>
+          <td class="td-num weight-cell">15 %</td>
+          <td>iShares Core MSCI Europe ex-CHF UCITS ETF</td>
+          <td class="td-num" style="font-size:11px">IE00B3VTML14</td>
+          <td class="td-num">IEXC SW<br><em style="color:#888;font-size:10px">(SIX)</em></td>
+          <td class="td-num">0.10 %</td>
+          <td>Irland</td>
+          <td><span class="chip chip-phy">Physisch</span></td>
+          <td><span class="chip chip-acc">Thes.</span></td>
+          <td>EUR (multi)</td>
+          <td>Dediziert Europa ex Schweiz; eliminiert Home-Bias-Doppelzählung. Breite Diversifikation über ~400 Titel; gute Liquidität an SIX. Physische Replikation angemessen da EU-Quellensteuer-Traktate vorteilhafter als bei US-Aktien.</td>
+        </tr>
+        <tr class="group-eq">
+          <td class="td-num td-center">3</td>
+          <td><strong>Aktien Schweiz</strong></td>
+          <td class="td-num weight-cell">10 %</td>
+          <td>UBS ETF (CH) – SPI® (CHF) A-dis</td>
+          <td class="td-num" style="font-size:11px">CH0032912732</td>
+          <td class="td-num">SPIA SW<br><em style="color:#888;font-size:10px">(SIX)</em></td>
+          <td class="td-num">0.10 %</td>
+          <td>Schweiz</td>
+          <td><span class="chip chip-phy">Physisch</span></td>
+          <td><span class="chip chip-dis">Aussch.</span></td>
+          <td>CHF</td>
+          <td>Schweizerisch domiziliert, bildet SPI (ca. 200 Titel) vollständig ab. Kein Währungsrisiko. Ausschüttend — optimiert für schweizerische Quellensteuer-Rückerstattung. Hohe Liquidität, ältester CH-Aktien-ETF an SIX.</td>
+        </tr>
+        <tr class="group-eq">
+          <td class="td-num td-center">4</td>
+          <td><strong>Aktien Japan</strong></td>
+          <td class="td-num weight-cell">7 %</td>
+          <td>Xtrackers MSCI Japan UCITS ETF 1C (JPY unhedged)</td>
+          <td class="td-num" style="font-size:11px">IE00BM67HX15</td>
+          <td class="td-num">XMJP SW<br><em style="color:#888;font-size:10px">(SIX)</em></td>
+          <td class="td-num">0.12 %</td>
+          <td>Irland</td>
+          <td><span class="chip chip-phy">Physisch</span></td>
+          <td><span class="chip chip-acc">Thes.</span></td>
+          <td>JPY</td>
+          <td>Breite Japan-Abdeckung (~300 Titel, MSCI Japan). JPY unhedged: bei langem Horizont ist JPY-Absicherung kostenintensiv und bei ≥10 Jahren nicht zwingend nötig (JPY historisch risikoaverser Safe-Haven). Gut handelbar an SIX.</td>
+        </tr>
+        <tr class="group-eq">
+          <td class="td-num td-center">5</td>
+          <td><strong>Aktien EM</strong></td>
+          <td class="td-num weight-cell">8 %</td>
+          <td>iShares Core MSCI EM IMI UCITS ETF (Acc)</td>
+          <td class="td-num" style="font-size:11px">IE00BKM4GZ66</td>
+          <td class="td-num">IS3N SW³<br><em style="color:#888;font-size:10px">(SIX / alt. Xetra)</em></td>
+          <td class="td-num">0.18 %</td>
+          <td>Irland</td>
+          <td><span class="chip chip-phy">Physisch</span></td>
+          <td><span class="chip chip-acc">Thes.</span></td>
+          <td>USD</td>
+          <td>IMI-Index (inkl. Small Caps, ~2700 Titel); breiteste EM-Abdeckung am Markt. Primär an Xetra gelistet; an SIX mit dem Ticker EMIM handelbar. Sehr kostengünstig für Breite des Exposure.</td>
+        </tr>
+        <tr class="group-fi">
+          <td class="td-num td-center">6</td>
+          <td><strong>Anleihen Global (CHF-hedged)</strong></td>
+          <td class="td-num weight-cell">15 %</td>
+          <td>iShares Global Govt Bond UCITS ETF CHF Hedged (Acc)</td>
+          <td class="td-num" style="font-size:11px">IE00BG0J4957</td>
+          <td class="td-num">IGLH SW<br><em style="color:#888;font-size:10px">(SIX)</em></td>
+          <td class="td-num">0.10 %</td>
+          <td>Irland</td>
+          <td><span class="chip chip-phy">Physisch</span></td>
+          <td><span class="chip chip-acc">Thes.</span></td>
+          <td>CHF</td>
+          <td>Globale Staatsanleihen (FTSE World Government Bond Index) mit vollständiger CHF-Absicherung; eliminiert FX-Risiko im defensiven Portfolioteil vollständig. Kern-Diversifikator in Stressphasen.</td>
+        </tr>
+        <tr class="group-fi">
+          <td class="td-num td-center">7</td>
+          <td><strong>Anleihen EM (Hard Currency)</strong></td>
+          <td class="td-num weight-cell">5 %</td>
+          <td>iShares J.P. Morgan USD EM Bond UCITS ETF (Dist)</td>
+          <td class="td-num" style="font-size:11px">IE00B2NPKV68</td>
+          <td class="td-num">IEMB SW<br><em style="color:#888;font-size:10px">(SIX)</em></td>
+          <td class="td-num">0.45 %</td>
+          <td>Irland</td>
+          <td><span class="chip chip-phy">Physisch</span></td>
+          <td><span class="chip chip-dis">Aussch.</span></td>
+          <td>USD</td>
+          <td>JP Morgan EMBI Global Diversified; USD-Hartwährungsanleihen von EM-Staatsemittenten. Ausschüttend für Coupon-Vereinnahmung. USD-Risiko bewusst akzeptiert als Carry-Beitrag. Gut handelbar an SIX.</td>
+        </tr>
+        <tr class="group-alt">
+          <td class="td-num td-center">8</td>
+          <td><strong>Rohstoffe (7 %) + Gold (3 %)</strong></td>
+          <td class="td-num weight-cell">10 %</td>
+          <td><em>Aufgeteilt auf zwei Instrumente:</em><br>
+            <strong>7 %</strong>: iShares Bloomberg Enhanced Roll Commodity Swap UCITS ETF (Acc)<br>
+            <strong>3 %</strong>: ZKB Gold ETF (CHF, physisch)</td>
+          <td class="td-num" style="font-size:11px">IE00BDFL4P12<br><br>CH0047533523</td>
+          <td class="td-num">ICOM SW<br><br>ZGLD SW<br><em style="color:#888;font-size:10px">(SIX)</em></td>
+          <td class="td-num">0.19 %<br><br>0.40 %</td>
+          <td>Irland<br><br>Schweiz</td>
+          <td><span class="chip chip-syn">Synthetisch (Swap)</span><br><br><span class="chip chip-phy">Physisch</span></td>
+          <td><span class="chip chip-acc">Thes.</span><br><br><span class="chip chip-acc">Thes.</span></td>
+          <td>USD<br><br>CHF</td>
+          <td>ICOM: Breiter Commodity-ETF mit Roll-Optimierung (Bloomberg Enhanced Roll), synthetisch — kein physisches Lager notwendig. ZGLD: Schweizer ZKB-Gold-ETF, 100 % physisch besichert, in CHF abgerechnet, kein Gegenparteirisiko, an SIX primär gelistet.</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td><strong>Total</strong></td>
+          <td class="td-num"><strong>100 %</strong></td>
+          <td colspan="9">8 Positionen — 6 an SIX primär gelistet; 1 x Xetra-Primärnotiz (EM IMI, alternativ SIX-Ticker verfügbar); 1 x kombinierte Position (ICOM + ZGLD)</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <p class="footnote">¹ Für Position 1: Sofern die CHF-gesicherte Anteilsklasse von CSPX an SIX nicht ausreichend liquide ist, kann alternativ der <strong>Xtrackers S&amp;P 500 Swap UCITS ETF 1C (XSPX SW, TER 0.06 %)</strong> ohne Währungsabsicherung eingesetzt werden — in diesem Fall wird das USD-Risiko im Rohstoff-Hedge und im Anleihenportfolio kompensiert. ² Synthetische Replikation bei US-Aktien-ETFs aus Irland: Durch die Swap-Struktur wird die US-Quellensteuer auf Dividenden (15 % für irische UCITS-Fonds bei physischer Replikation) eliminiert, was typischerweise 0.10–0.15 % p.a. Tracking-Advantage gegenüber physischen ETFs liefert. Das Kontrahentenrisiko wird durch UCITS-Regulierung auf max. 10 % Nettoexposure limitiert und durch Overcollateralisation und tägliches Reset abgesichert. ³ EMIM SW und IS3N SW sind alternative Ticker für denselben ETF an SIX — Liquidität primär an Xetra, aber an SIX handelbar.</p>
+</div>
+
+<!-- SECTION C -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">C</span>
+    <span class="section-title">Zusammenfassung der wichtigsten Design-Entscheidungen</span>
+  </div>
+  <div class="bullet-grid">
+    <div class="bullet-item">
+      <span class="bullet-num">01</span>
+      <span><strong>Aktienquote 70 %</strong> — Mittelwert der erlaubten Bandbreite (60–80 %). Bei hohem Risikoappetit und 10-jährigem Horizont ist eine volle 80 %-Quote vertretbar; 70 % bietet jedoch genügend defensiven Puffer (Anleihen 20 %, Rohstoffe 10 %), um zwischenzeitliche Drawdowns von –40 % bis –50 % in Krisenjahren auszuhalten, ohne den Investmentplan zu gefährden.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">02</span>
+      <span><strong>Regionalmix Aktien</strong> — USA (30 %) übergewichtet gegenüber globalem Marktgewicht (~65 %), aber bewusst begrenzt. Europa ex CH (15 %) und EM (8 %) bieten Bewertungs- und Wachstumsdiversifikation. Japan (7 %) profitiert von laufenden Corporate-Governance-Reformen. CH (10 %) als Home-Bias-Anker.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">03</span>
+      <span><strong>Home Bias Schweiz</strong> — 10 % CH-Aktien entspricht einer moderaten, gerechtfertigten Übergewichtung (Marktgewicht global: ~2 %). Vorteile: kein Währungsrisiko, günstige Quellensteuer, Zugang zu defensiven Qualitätsunternehmen (Healthcare, Konsumgüter). Eine darüber hinausgehende Übergewichtung würde ein unerwünschtes Klumpenrisiko in wenigen Mega-Caps (Nestlé, Novartis, Roche) erzeugen, da diese drei Titel ~55 % des SMI ausmachen.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">04</span>
+      <span><strong>Synthetische ETFs (USA-Aktien)</strong> — Für US-Aktien (Position 1) wird explizit ein synthetischer ETF (Swap-basiert, irisches UCITS) eingesetzt. Der Grund: irische UCITS-Fonds bei physischer Replikation unterliegen einem US-Quellensteuersatz von 15 % auf Dividenden. Synthetische ETFs umgehen diesen Abzug durch Total-Return-Swaps mit einem Kontrahenten, der die steuerlich optimierte Position hält. Dies liefert einen typischen Vorteil von +0.10 bis +0.20 % p.a. gegenüber physischen ETFs auf denselben US-Index. Das UCITS-Kontrahentenrisiko (max. 10 %, täglich resettet, mit Sicherheiten unterlegt) ist als beherrschbar einzustufen. Für alle anderen Märkte (Europa, CH, Japan, EM) wird physische Replikation bevorzugt, da der steuerliche Vorteil synthetischer Strukturen dort geringer ausfällt.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">05</span>
+      <span><strong>Währungsabsicherung</strong> — Differenzierter Ansatz: (a) <em>Absicherung</em> bei globalen Anleihen (CHF-Hedge obligatorisch, da Zins- und Währungsrisiko unkorreliert und Absicherungskosten gering); (b) <em>Keine Absicherung</em> bei US-Aktien via CHF-Hedged-Klasse optional — bei langem Horizont ist FX-Volatilität reversibel und die Hedgingkosten (ca. 1–2 % p.a. USD/CHF je nach Zinsdifferenz) fressen Rendite; (c) JPY und EM-Währungen unhedged — Kosten prohibitiv und strukturell nicht gerechtfertigt bei ≥10 Jahren.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">06</span>
+      <span><strong>Rohstoffe &amp; Edelmetalle (10 %)</strong> — Aufgeteilt in breiten Commodity-ETF (7 %, Roll-optimiert) und physisches Gold (3 %). Gold fungiert als monetäres Sicherheitsnetz und zeigt in Extremszenarien negative Korrelation zu Aktien. Commodities bieten Inflationsschutz und zyklische Diversifikation. <em>Ausschluss</em>: Energie-only oder Agrargüter-only ETFs wurden verworfen, da sie unerwünschte Sektorkonzentration erzeugen würden.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">07</span>
+      <span><strong>Ausgeschlossene Anlageklassen</strong> — <em>Immobilien (REITs)</em>: Hohe Korrelation zu Aktien in Krisenphasen, Zinsrisiko, und bei einem bereits diversifizierten Portfolio kein signifikanter Zusatznutzen nachgewiesen; ausgelassen. <em>Krypto-Assets</em>: Kein Einschluss — regulatorische Unsicherheit, fehlende Einordnung als UCITS-fähige Anlageklasse, extreme Volatilität und Frage der fundamentalen Bewertung ungeklärt; passt nicht zu einem regelbasierten, treuhänderisch-verantwortbaren Referenzportfolio.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">08</span>
+      <span><strong>Anzahl Positionen (8)</strong> — Bewusst im unteren Teil der Vorgabe (6–10). Jede Position hat eine klare, nicht-redundante Rolle. Eine weitere Disaggregation (z. B. separates Small-Cap-Aktien-ETF, High-Yield-Anleihen, Infrastruktur) wäre möglich, erhöht aber Komplexität und Rebalancing-Kosten ohne proportionalen Diversifikationsgewinn bei dieser Portfoliogrösse.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">09</span>
+      <span><strong>Cash / Geldmarkt: 0 %</strong> — Bei einem Anlagehorizont von ≥10 Jahren und hohem Risikoappetit ist strategisches Cash kontraproduktiv. Die Cash-Reserve für Liquiditätsbedarf (Notfallreserve, laufende Ausgaben) ist ausserhalb des Investmentportfolios zu führen. Taktisches Cash-Management (z. B. für Rebalancing-Transaktionen) erfolgt aus Dividenden-/Couponzahlungen.</span>
+    </div>
+    <div class="bullet-item">
+      <span class="bullet-num">10</span>
+      <span><strong>Konzentrationsrisiken</strong> — Trotz 8 Positionen besteht ein signifikantes implizites Exposure in US-Tech-Mega-Caps (Apple, Microsoft, Nvidia, Alphabet, Amazon machen ~20–25 % des S&amp;P 500 aus). Dies ist bewusst akzeptiert, da diese Unternehmen global tätig sind und echte Diversifikation auf Umsatzbasis bieten. Eine Equal-Weight-Variante wäre möglich, erfordert aber deutlich höhere Rebalancing-Frequenz.</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION D -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">D</span>
+    <span class="section-title">Konsolidierte Währungsübersicht nach Hedging</span>
+  </div>
+  <div class="ccy-wrap">
+    <div class="ccy-row" style="font-family:var(--mono);font-size:9.5px;color:#888;text-transform:uppercase;letter-spacing:0.1em;">
+      <span>Währung</span><span>Anteil</span><span>Gewicht</span><span>Hedging-Status</span>
+    </div>
+    <div class="ccy-row">
+      <span class="ccy-label">CHF</span>
+      <div class="bar-track"><div class="bar-fill bar-chf" style="width:27%"></div></div>
+      <span class="ccy-pct">27 %</span>
+      <span class="ccy-note">CH-Aktien (10 %), Global-Bonds hedged (15 %), Gold ZKB CHF (3 %) — nativ oder vollständig abgesichert</span>
+    </div>
+    <div class="ccy-row">
+      <span class="ccy-label">USD (netto)</span>
+      <div class="bar-track"><div class="bar-fill bar-usd" style="width:38%"></div></div>
+      <span class="ccy-pct">38 %</span>
+      <span class="ccy-note">USA-Aktien (30 % unhedged¹), EM-Bonds (5 %), ICOM Commodities (7 % USD-basiert) — Haupt-FX-Risiko</span>
+    </div>
+    <div class="ccy-row">
+      <span class="ccy-label">EUR/GBP/etc.</span>
+      <div class="bar-track"><div class="bar-fill bar-eur" style="width:15%"></div></div>
+      <span class="ccy-pct">15 %</span>
+      <span class="ccy-note">Europa ex CH (15 %) — unhedged; natürliche Diversifikation für CHF-Investor gegenüber EUR</span>
+    </div>
+    <div class="ccy-row">
+      <span class="ccy-label">JPY</span>
+      <div class="bar-track"><div class="bar-fill bar-jpy" style="width:7%"></div></div>
+      <span class="ccy-pct">7 %</span>
+      <span class="ccy-note">Japan-Aktien — unhedged; JPY als Safe-Haven-Währung mit negativer Korrelation zu Risikoabverkäufen</span>
+    </div>
+    <div class="ccy-row">
+      <span class="ccy-label">EM-Multi</span>
+      <div class="bar-track"><div class="bar-fill bar-em" style="width:8%"></div></div>
+      <span class="ccy-pct">8 %</span>
+      <span class="ccy-note">EM-Aktien (8 %) — Underlying-Währungen (CNY, INR, KRW, BRL, etc.); ETF in USD notiert</span>
+    </div>
+    <div class="ccy-row">
+      <td></td>
+      <div class="bar-track" style="background:transparent;border:none;"></div>
+      <span class="ccy-pct" style="font-weight:700">100 %</span>
+      <span></span>
+    </div>
+  </div>
+  <p class="footnote" style="margin-top:16px">¹ Falls die CHF-gesicherte Klasse von CSPX mit guter Liquidität verfügbar ist, reduziert sich das USD-Nettoexposure auf ca. 12–15 % (EM-Bonds + Commodities). Hedging-Entscheidung für USA-Aktien bleibt dem Investor überlassen und sollte abhängig von der USD/CHF-Zinsdifferenz und Hedging-Kosten periodisch überprüft werden. <br>² Alle Prozentangaben sind gerundete Näherungen; das effektive FX-Exposure variiert täglich durch Marktbewegungen.</p>
+</div>
+
+<!-- SECTION E -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">E</span>
+    <span class="section-title">Top-10 Aktienpositionen auf Look-through-Basis</span>
+  </div>
+  <div class="info-box">
+    Basierend auf S&amp;P 500 Gewichtungen (Position 1, 30 % Portfolio) und approximativen Gewichten aus MSCI Europe ex CH, SPI und MSCI Japan. Die Prozentangaben beziehen sich auf das <strong>Gesamtportfolio</strong> (100 % = CHF-Portfolio inkl. Anleihen und Rohstoffe).
+  </div>
+  <div class="top10-grid">
+    <div class="top10-item"><span class="top10-rank">01</span><span><strong>Apple Inc.</strong> (USA / Technology)</span><span class="top10-pct">~2.1 %</span></div>
+    <div class="top10-item"><span class="top10-rank">02</span><span><strong>Microsoft Corp.</strong> (USA / Technology)</span><span class="top10-pct">~2.0 %</span></div>
+    <div class="top10-item"><span class="top10-rank">03</span><span><strong>NVIDIA Corp.</strong> (USA / Semiconductors)</span><span class="top10-pct">~1.9 %</span></div>
+    <div class="top10-item"><span class="top10-rank">04</span><span><strong>Amazon.com Inc.</strong> (USA / Cons. Discret.)</span><span class="top10-pct">~1.4 %</span></div>
+    <div class="top10-item"><span class="top10-rank">05</span><span><strong>Alphabet Inc. (A+C)</strong> (USA / Communication)</span><span class="top10-pct">~1.3 %</span></div>
+    <div class="top10-item"><span class="top10-rank">06</span><span><strong>Meta Platforms</strong> (USA / Communication)</span><span class="top10-pct">~0.9 %</span></div>
+    <div class="top10-item"><span class="top10-rank">07</span><span><strong>Nestlé SA</strong> (CH / Consumer Staples)</span><span class="top10-pct">~0.7 %</span></div>
+    <div class="top10-item"><span class="top10-rank">08</span><span><strong>Tesla Inc.</strong> (USA / Consumer Discret.)</span><span class="top10-pct">~0.6 %</span></div>
+    <div class="top10-item"><span class="top10-rank">09</span><span><strong>Novartis AG</strong> (CH / Healthcare)</span><span class="top10-pct">~0.6 %</span></div>
+    <div class="top10-item"><span class="top10-rank">10</span><span><strong>ASML Holding NV</strong> (EUR / Semiconductors)</span><span class="top10-pct">~0.5 %</span></div>
+  </div>
+  <p class="footnote" style="margin-top:14px">Alle Gewichte sind Schätzungen basierend auf Indexgewichtungen per April 2025 und können sich durch Marktbewegungen und Indexanpassungen verändern. Die tatsächlichen Gewichte sind beim jeweiligen ETF-Anbieter (iShares.com, ubs.com/etf) tagesaktuell abrufbar. US-Tech-Konzentration (Top 5 ca. 9.6 % des Gesamtportfolios) ist bewusst akzeptiert, reflektiert globale wirtschaftliche Dominanz dieser Unternehmen.</p>
+</div>
+
+<!-- SECTION F -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">F</span>
+    <span class="section-title">Rebalancing-Konzept</span>
+  </div>
+  <div class="rebal-grid">
+    <div class="rebal-card">
+      <div class="rebal-card-title">Frequenz</div>
+      <div class="rebal-card-body">
+        <strong>Halbjährlich</strong> als Basis-Trigger (Januar / Juli). Zusätzlich <em>ereignisgesteuert</em> bei Überschreitung der Bandbreiten (s. rechts). Keine monatliche Überprüfung — erhöht unnötige Transaktionskosten ohne Mehrwert bei langem Horizont.
+      </div>
+    </div>
+    <div class="rebal-card">
+      <div class="rebal-card-title">Bandbreiten (Toleranzzonen)</div>
+      <div class="rebal-card-body">
+        <strong>Aktien-ETFs (≥10 % Zielgewicht):</strong> ±5 Prozentpunkte<br>
+        <strong>Aktien-ETFs (&lt;10 % Zielgewicht):</strong> ±3 Prozentpunkte<br>
+        <strong>Anleihen global:</strong> ±4 Prozentpunkte<br>
+        <strong>Rohstoffe / Gold:</strong> ±3 Prozentpunkte<br>
+        <strong>EM Bonds:</strong> ±2 Prozentpunkte<br><br>
+        Überschreitung <em>einer</em> Position → sofortiges Rebalancing dieser Position.
+      </div>
+    </div>
+    <div class="rebal-card">
+      <div class="rebal-card-title">Implementierungsregeln</div>
+      <div class="rebal-card-body">
+        1. <strong>Cashflow-zuerst:</strong> Dividenden und Coupons für Rebalancing nutzen (steuerschonend). <br>
+        2. <strong>Neue Einzahlungen</strong> zuerst in untergewichtete Positionen lenken.<br>
+        3. <strong>Verkäufe</strong> nur bei signifikanter Abweichung; Transaktionskosten vs. Driftkosten abwägen.<br>
+        4. <strong>Steueroptimierung:</strong> Im steuerpflichtigen Depot Verlustpositionen zuerst veräussern (Tax Loss Harvesting wo zulässig).
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION G -->
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">G</span>
+    <span class="section-title">Kostenschätzung — Gewichtete TER</span>
+  </div>
+  <div class="cost-wrap">
+    <table class="cost-table">
+      <thead>
+        <tr style="background:var(--ink);color:var(--paper);">
+          <th style="padding:8px 10px;font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;">Position</th>
+          <th style="padding:8px 10px;font-family:var(--mono);font-size:9.5px;text-align:right">Gewicht</th>
+          <th style="padding:8px 10px;font-family:var(--mono);font-size:9.5px;text-align:right">TER</th>
+          <th style="padding:8px 10px;font-family:var(--mono);font-size:9.5px;text-align:right">Beitrag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Aktien USA (CSPX/XSPX)</td><td class="td-num">30 %</td><td class="td-num">0.07 %</td><td class="td-num">0.021 %</td></tr>
+        <tr><td>Aktien Europa ex CH (IEXC)</td><td class="td-num">15 %</td><td class="td-num">0.10 %</td><td class="td-num">0.015 %</td></tr>
+        <tr><td>Aktien CH (SPIA)</td><td class="td-num">10 %</td><td class="td-num">0.10 %</td><td class="td-num">0.010 %</td></tr>
+        <tr><td>Aktien Japan (XMJP)</td><td class="td-num">7 %</td><td class="td-num">0.12 %</td><td class="td-num">0.008 %</td></tr>
+        <tr><td>Aktien EM (EMIM)</td><td class="td-num">8 %</td><td class="td-num">0.18 %</td><td class="td-num">0.014 %</td></tr>
+        <tr><td>Anleihen Global hedged (IGLH)</td><td class="td-num">15 %</td><td class="td-num">0.10 %</td><td class="td-num">0.015 %</td></tr>
+        <tr><td>EM Bonds (IEMB)</td><td class="td-num">5 %</td><td class="td-num">0.45 %</td><td class="td-num">0.023 %</td></tr>
+        <tr><td>Commodities (ICOM)</td><td class="td-num">7 %</td><td class="td-num">0.19 %</td><td class="td-num">0.013 %</td></tr>
+        <tr><td>Gold ZKB (ZGLD)</td><td class="td-num">3 %</td><td class="td-num">0.40 %</td><td class="td-num">0.012 %</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td><strong>Gewichtete TER Total</strong></td><td></td><td></td><td class="td-num"><strong>0.131 %</strong></td></tr>
+      </tfoot>
+    </table>
+    <div class="cost-summary">
+      <div class="cost-summary-label">Gewichtete Gesamtkosten p.a.</div>
+      <div class="cost-summary-num">0.13 %</div>
+      <div class="cost-summary-unit">TER p.a. — alle 8 Positionen</div>
+      <div class="cost-note">Hinzu kommen: Transaktionskosten (Spread, Courtage, ~0.05–0.15 % p.a. bei halbjährl. Rebalancing), FX-Hedging-Kosten (0.10–0.20 % p.a. für abgesicherte Positionen) und ggf. Depotgebühren. Gesamtkosten inkl. aller Nebenkosten: geschätzt <strong>0.25–0.40 % p.a.</strong> — erheblich günstiger als vergleichbare aktive Fondsstrategien (typisch 0.8–1.5 % p.a.).</div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+
+<div class="disclaimer">
+  <div class="disclaimer-title">⚠ Anlagehinweis — Rechtlicher Hinweis nach anerkannten Best-Practice-Standards</div>
+  <p>Dieses Dokument wurde ausschliesslich zu Informations- und Referenzzwecken erstellt und stellt <strong>keine individuelle Anlageberatung, keine Vermögensverwaltung und kein Angebot zum Kauf oder Verkauf von Finanzinstrumenten</strong> dar. Die enthaltenen Informationen, Meinungen und Portfoliovorschläge berücksichtigen nicht die spezifischen persönlichen Umstände, finanziellen Verhältnisse, Anlageziele, steuerliche Situation oder Risikobereitschaft einzelner Anlegerinnen und Anleger.</p>
+  <br>
+  <p>Vergangene Wertentwicklungen sind keine Garantie für zukünftige Ergebnisse. Alle Kapitalanlagen sind mit Risiken verbunden; es besteht die Möglichkeit des vollständigen Kapitalverlusts. Wechselkursschwankungen können den Wert von Anlagen in Fremdwährungen erhöhen oder verringern. ETF-Kurse können sowohl steigen als auch fallen und spiegeln nicht zwingend den inneren Wert des zugrunde liegenden Portfolios wider.</p>
+  <br>
+  <p>Die genannten ISINs, Ticker und ETF-Produkte dienen der Illustration; ihre Aktualität und Handelbarkeit ist vom Anleger eigenständig zu verifizieren. Steuertechnische Aussagen sind allgemeiner Natur; die steuerliche Behandlung von ETF-Investments hängt von individuellen Umständen ab und kann sich ändern.</p>
+  <br>
+  <p>Anlegerinnen und Anleger werden ausdrücklich aufgefordert, <strong>vor jeder Investitionsentscheidung</strong> eine auf ihre individuelle Situation zugeschnittene Beratung durch eine regulierte Finanzberaterin / einen regulierten Finanzberater, eine Steuerberaterin / einen Steuerberater sowie — bei grösseren Vermögen — durch eine rechtlich zugelassene Vermögensverwaltung einzuholen. Die vorliegenden Angaben basieren auf dem Wissensstand per April 2025 und können ohne Vorankündigung veralten.</p>
+</div>
+
+</body>
+</html>
