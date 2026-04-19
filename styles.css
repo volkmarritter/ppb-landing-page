@@ -211,6 +211,54 @@ h1 em { font-style: normal; color: var(--blue); }
   .modes-inner { grid-template-columns: 1fr; }
 }
 
+/* ── JOURNEY ── */
+.journey-section {
+  background: linear-gradient(135deg, #eef5fd 0%, #e4f0fb 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.journey-intro { text-align: center; }
+.journey-badges {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.75rem; margin-bottom: 1rem;
+}
+.journey-new-badge {
+  display: inline-flex; align-items: center;
+  padding: 0.2rem 0.75rem;
+  background: #d4af37; color: #0f1f2e;
+  font-size: 0.65rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  border-radius: 999px;
+}
+.journey-chapters {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-bottom: 2rem;
+}
+.journey-chapter {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 1.25rem;
+  display: flex; gap: 0.9rem; align-items: flex-start;
+  transition: border-color .2s, box-shadow .2s;
+}
+.journey-chapter:hover { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-light); }
+.journey-chapter-highlight { border-color: var(--blue); background: var(--blue-light); }
+.jc-icon { font-size: 1.4rem; flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+.journey-chapter h4 { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
+.journey-chapter p { font-size: 0.78rem; color: var(--muted); line-height: 1.55; margin: 0; }
+.journey-integration {
+  display: flex; gap: 1.25rem; align-items: flex-start;
+  background: var(--ink); color: var(--white);
+  border-radius: 14px; padding: 1.5rem 1.75rem;
+  margin-bottom: 2.5rem;
+}
+.ji-icon { font-size: 1.75rem; flex-shrink: 0; }
+.journey-integration strong { display: block; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.journey-integration p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0; }
+.journey-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.journey-btn { font-size: 1rem; padding: 0.85rem 1.75rem; }
+@media (max-width: 900px) { .journey-chapters { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .journey-chapters { grid-template-columns: 1fr; } .journey-actions { flex-direction: column; } }
+
 /* ── SECTIONS ── */
 section { padding: 80px 5%; }
 .section-inner { max-width: 1100px; margin: 0 auto; }
