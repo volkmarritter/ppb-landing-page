@@ -98,4 +98,38 @@ Open `http://localhost:8000/`.
 ## Deployment
 
 Push to `main` triggers GitHub Pages deployment automatically.
-Live site: <https://volkmarritter.github.io/ppb-landing-page/>
+Live site (dev/backup): <https://volkmarritter.github.io/ppb-landing-page/>
+
+## WordPress integration (bicon.li)
+
+The landing page is embedded at `https://bicon.li/portfolio-prompt-builder/` (DE) and
+`https://bicon.li/en/portfolio-prompt-builder/` (EN) via a WordPress custom HTML block:
+
+```html
+<iframe id="ppb-frame" style="position:fixed;top:0;left:0;width:100%;height:100%;border:none;z-index:9998;" title="Portfolio Prompt Builder"></iframe>
+<script>
+var src = window.location.pathname.indexOf('/en/') === 0
+  ? 'https://bicon.li/prompt-builder/landingpage/index.html'
+  : 'https://bicon.li/prompt-builder/landingpage/de.html';
+document.getElementById('ppb-frame').src = src;
+</script>
+```
+
+- The iframe completely bypasses WordPress/GeneratePress — no theme interference
+- Language is auto-detected from the URL path (`/en/` = English, otherwise German)
+- All nav/builder links use `target="_blank"` so users never navigate inside the iframe
+
+### Server file path
+
+Files are hosted at: `/httpdocs/prompt-builder/landingpage/`
+
+After changes, upload these files manually to that path:
+- `index.html`
+- `de.html`
+- `styles.css`
+- `Screen.png`
+- `Reference Portfolio EUR April2026.pdf`
+- `Reference Portfolio CHF April2026.html`
+
+A ready-to-upload copy can be found at:
+`C:\Users\volkm\AppData\Local\Temp\ppb-upload\`
