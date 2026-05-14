@@ -179,6 +179,37 @@ h1 em { font-style: normal; color: var(--blue); }
   background: var(--white);
   border-bottom: 1px solid var(--border);
 }
+
+/* ── JOURNEY CALLOUT BANNER ── */
+.journey-callout {
+  background: linear-gradient(135deg, #0f1f2e 0%, #1a3550 100%);
+  padding: 1.75rem 5%;
+}
+.journey-callout-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+.journey-callout-icon {
+  flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(30,115,190,0.35);
+  display: flex; align-items: center; justify-content: center;
+}
+.journey-callout-icon svg { width: 22px; height: 22px; color: #fff; }
+.journey-callout-body { flex: 1; min-width: 200px; }
+.journey-callout-body strong { display: block; color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem; }
+.journey-callout-body p { color: rgba(255,255,255,0.65); font-size: 0.875rem; margin: 0; line-height: 1.5; }
+.journey-callout-btn {
+  flex-shrink: 0; white-space: nowrap;
+  background: #fff; color: var(--ink); border-radius: 8px;
+  padding: 0.65rem 1.25rem; font-weight: 700; font-size: 0.875rem;
+  display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;
+  transition: background 0.15s;
+}
+.journey-callout-btn:hover { background: rgba(255,255,255,0.88); }
+.journey-callout-btn svg { width: 15px; height: 15px; color: var(--blue); }
+@media (max-width: 600px) {
+  .journey-callout-inner { flex-direction: column; align-items: flex-start; }
+}
 .modes-inner {
   max-width: 1100px; margin: 0 auto;
   display: grid; grid-template-columns: auto 1fr 1fr; gap: 2rem; align-items: stretch;
