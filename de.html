@@ -21,6 +21,9 @@
     <a href="https://bicon.li/kontakt/" target="_blank" rel="noopener">Kontakt</a>
     <a href="https://bicon.li/prompt-builder/" target="_top" class="nav-cta">Zum Builder →</a>
   </div>
+  <button class="nav-hamburger" aria-label="Menü" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <section class="hero">
@@ -451,6 +454,22 @@
   </div>
 </footer>
 
-<script>lucide.createIcons();</script>
+<script>
+lucide.createIcons();
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var nav = btn.closest('nav');
+  btn.addEventListener('click', function() {
+    var open = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      nav.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>
