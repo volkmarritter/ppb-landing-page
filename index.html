@@ -8,6 +8,7 @@
   <script>document.documentElement.style.cssText='visibility:hidden'</script>
   <link rel="stylesheet" href="styles.css" />
   <script>document.documentElement.style.cssText=''</script>
+  <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -68,7 +69,7 @@
     </div>
     <div class="mode-card">
       <span class="mode-badge daily">Basic</span>
-      <div class="mode-emoji">⚡</div>
+      <div class="mode-emoji"><i data-lucide="zap"></i></div>
       <div>
         <h4>Fast prompt for daily use</h4>
         <p>Get a ready-to-use portfolio prompt in seconds — no financial background required. Ideal for private investors and anyone who wants quick, structured AI output.</p>
@@ -76,7 +77,7 @@
     </div>
     <div class="mode-card">
       <span class="mode-badge team">Pro</span>
-      <div class="mode-emoji">🏗️</div>
+      <div class="mode-emoji"><i data-lucide="sliders-horizontal"></i></div>
       <div>
         <h4>Advanced configuration for professionals</h4>
         <p>Fine-tune allocation logic, home bias rules, and output modules to match your investment mandate. Built for advisors, analysts, and portfolio managers.</p>
@@ -98,42 +99,42 @@
     </div>
     <div class="journey-chapters">
       <div class="journey-chapter">
-        <span class="jc-icon">📊</span>
+        <span class="jc-icon"><i data-lucide="bar-chart-2"></i></span>
         <div>
           <h4>Strategic Asset Allocation</h4>
           <p>Adjust allocation sliders and watch expected return and volatility update live on a donut chart.</p>
         </div>
       </div>
       <div class="journey-chapter">
-        <span class="jc-icon">🗂️</span>
+        <span class="jc-icon"><i data-lucide="layers"></i></span>
         <div>
           <h4>Why ETFs</h4>
           <p>Diversification benefits and cost impact visualised across different timeframes in an interactive grid.</p>
         </div>
       </div>
       <div class="journey-chapter">
-        <span class="jc-icon">🎯</span>
+        <span class="jc-icon"><i data-lucide="target"></i></span>
         <div>
           <h4>The Stock-Picking Trap</h4>
           <p>An interactive game that reveals whether your picks beat the benchmark — backed by SPIVA performance data.</p>
         </div>
       </div>
       <div class="journey-chapter">
-        <span class="jc-icon">📉</span>
+        <span class="jc-icon"><i data-lucide="trending-down"></i></span>
         <div>
           <h4>Market Timing</h4>
           <p>Charts show the cost of missing the best trading days, with real historical drawdown examples.</p>
         </div>
       </div>
       <div class="journey-chapter">
-        <span class="jc-icon">📈</span>
+        <span class="jc-icon"><i data-lucide="trending-up"></i></span>
         <div>
           <h4>The Power of Compounding</h4>
           <p>A four-parameter calculator with export — save as a PNG image or copy a formatted summary.</p>
         </div>
       </div>
       <div class="journey-chapter journey-chapter-highlight">
-        <span class="jc-icon">🧠</span>
+        <span class="jc-icon"><i data-lucide="brain"></i></span>
         <div>
           <h4>Your Investor Profile</h4>
           <p>Four questions, four risk profiles — and a direct link that pre-fills the Portfolio Prompt Builder with your result.</p>
@@ -141,7 +142,7 @@
       </div>
     </div>
     <div class="journey-integration">
-      <div class="ji-icon">⚡</div>
+      <div class="ji-icon"><i data-lucide="zap"></i></div>
       <div>
         <strong>Full integration with the Quick Start screen</strong>
         <p>The final chapter generates your risk profile and opens the Portfolio Prompt Builder with your parameters pre-filled — from understanding to actionable prompt in one seamless flow.</p>
@@ -170,21 +171,21 @@
         <p class="section-sub">Generic prompts produce generic output. Getting a language model to apply home bias logic, handle currency hedging, and select the right ETFs takes expertise — and time.</p>
         <div class="pain-list">
           <div class="pain-item">
-            <div class="pain-icon">⏱</div>
+            <div class="pain-icon"><i data-lucide="timer"></i></div>
             <div>
               <strong>Writing good prompts takes too long</strong>
               <p>Each client has different parameters. Rebuilding a structured prompt from scratch every time wastes analyst hours on formatting, not thinking.</p>
             </div>
           </div>
           <div class="pain-item">
-            <div class="pain-icon">🔁</div>
+            <div class="pain-icon"><i data-lucide="refresh-cw"></i></div>
             <div>
               <strong>Inconsistent results across advisors</strong>
               <p>Without a standardized input structure, two advisors can send wildly different prompts for similar mandates — leading to inconsistent AI outputs.</p>
             </div>
           </div>
           <div class="pain-item">
-            <div class="pain-icon">🧩</div>
+            <div class="pain-icon"><i data-lucide="puzzle"></i></div>
             <div>
               <strong>Missing domain logic</strong>
               <p>Off-the-shelf prompt templates don't know about home bias calculations, synthetic ETF opportunities and risks, or TER estimation. You have to add all of that manually.</p>
@@ -227,7 +228,7 @@
     <div class="steps">
       <div class="step">
         <div class="step-num">Step 01</div>
-        <span class="step-icon">🚀</span>
+        <span class="step-icon"><i data-lucide="zap"></i></span>
         <h3>Quick Start in 3 questions</h3>
         <p>Answer three quick questions — base currency, investment horizon, and risk appetite — and the builder instantly recommends a matching strategy preset. Hit <em>Apply and open builder</em> and you're ready to go.</p>
         <div class="step-tags">
@@ -240,7 +241,7 @@
       </div>
       <div class="step">
         <div class="step-num">Step 02</div>
-        <span class="step-icon">🧠</span>
+        <span class="step-icon"><i data-lucide="brain"></i></span>
         <h3>Built-in logic fires automatically</h3>
         <p>The builder validates your inputs, adjusts equity allocation for the selected risk profile, and applies home-bias rules tied to the base currency — without any manual work.</p>
         <div class="step-tags">
@@ -252,7 +253,7 @@
       </div>
       <div class="step">
         <div class="step-num">Step 03</div>
-        <span class="step-icon">📋</span>
+        <span class="step-icon"><i data-lucide="clipboard-check"></i></span>
         <h3>Copy and use instantly</h3>
         <p>A fully structured prompt is generated in your chosen language. Copy it to ChatGPT, Claude, or any LLM and get a professional-grade portfolio analysis immediately.</p>
         <div class="step-tags">
@@ -314,56 +315,56 @@
     <p class="section-sub">Every module reflects real investment decisions made by financial professionals — not generic AI templates.</p>
     <div class="feat-grid">
       <div class="feat-card">
-        <div class="feat-icon-box">🏠</div>
+        <div class="feat-icon-box"><i data-lucide="home"></i></div>
         <div>
           <h3>Dynamic Home Bias Logic</h3>
           <p>Automatically adjusts regional allocation weights based on the investor's base currency. A CHF mandate gets different home bias treatment than a EUR or USD mandate — just as it should be in practice.</p>
         </div>
       </div>
       <div class="feat-card">
-        <div class="feat-icon-box">💱</div>
+        <div class="feat-icon-box"><i data-lucide="arrow-left-right"></i></div>
         <div>
           <h3>Currency Hedging Module</h3>
           <p>Optionally includes structured guidance for assessing currency risk on non-base-currency positions, embedded directly in the generated prompt.</p>
         </div>
       </div>
       <div class="feat-card">
-        <div class="feat-icon-box">🗂️</div>
+        <div class="feat-icon-box"><i data-lucide="layers"></i></div>
         <div>
           <h3>6 Configurable Asset Classes</h3>
           <p>Choose from Cash, Bonds, Equities, Commodities, Listed Real Estate, and Crypto — with the latter two available as optional satellite positions for mandates that call for them.</p>
         </div>
       </div>
       <div class="feat-card">
-        <div class="feat-icon-box">⚠️</div>
+        <div class="feat-icon-box"><i data-lucide="alert-triangle"></i></div>
         <div>
           <h3>Synthetic ETF Evaluation</h3>
           <p>Optionally evaluates swap-based ETF alternatives where structural advantages apply — particularly relevant for optimising US dividend withholding tax exposure.</p>
         </div>
       </div>
       <div class="feat-card">
-        <div class="feat-icon-box">✅</div>
+        <div class="feat-icon-box"><i data-lucide="shield-check"></i></div>
         <div>
           <h3>Plausibility Validation</h3>
           <p>Built-in checks catch inconsistencies between risk profile and investment horizon before the prompt is generated, so your AI inputs stay coherent.</p>
         </div>
       </div>
       <div class="feat-card">
-        <div class="feat-icon-box">🌐</div>
+        <div class="feat-icon-box"><i data-lucide="globe"></i></div>
         <div>
           <h3>Bilingual Output</h3>
           <p>Generate prompts in German or English — ideal for DACH-based teams working with international clients or multilingual advisory workflows.</p>
         </div>
       </div>
       <div class="feat-card">
-        <div class="feat-icon-box">🔬</div>
+        <div class="feat-icon-box"><i data-lucide="microscope"></i></div>
         <div>
           <h3>ETF Look-Through Analysis</h3>
           <p>Instructs the AI to analyse the underlying exposures across all funds — flagging hidden concentrations and overlapping holdings before they become a problem.</p>
         </div>
       </div>
       <div class="feat-card">
-        <div class="feat-icon-box">🏷️</div>
+        <div class="feat-icon-box"><i data-lucide="tag"></i></div>
         <div>
           <h3>TER Estimation</h3>
           <p>The generated prompt asks the AI to calculate an estimated total expense ratio for the proposed portfolio — full cost transparency.</p>
@@ -381,32 +382,32 @@
     <p class="section-sub">Select which sections the AI should produce. Each module is optional — build the prompt that fits the specific client situation.</p>
     <div class="output-grid">
       <div class="output-card">
-        <div class="oc-icon">🎯</div>
+        <div class="oc-icon"><i data-lucide="target"></i></div>
         <h4>Target Allocation</h4>
         <p>Asset class weights and regional breakdown tailored to the risk profile and investment horizon.</p>
       </div>
       <div class="output-card">
-        <div class="oc-icon">📈</div>
+        <div class="oc-icon"><i data-lucide="trending-up"></i></div>
         <h4>ETF Implementation</h4>
         <p>Specific ETF recommendations with ISIN, exchange, and rationale for each position.</p>
       </div>
       <div class="output-card">
-        <div class="oc-icon">💵</div>
+        <div class="oc-icon"><i data-lucide="banknote"></i></div>
         <h4>Currency Overview</h4>
         <p>Currency exposure breakdown and hedging recommendations for non-base positions.</p>
       </div>
       <div class="output-card">
-        <div class="oc-icon">🔄</div>
+        <div class="oc-icon"><i data-lucide="rotate-cw"></i></div>
         <h4>Rebalancing Guidance</h4>
         <p>Tolerance bands and rebalancing triggers for maintaining the target allocation over time.</p>
       </div>
       <div class="output-card">
-        <div class="oc-icon">💰</div>
+        <div class="oc-icon"><i data-lucide="coins"></i></div>
         <h4>TER Estimation</h4>
         <p>Total Expense Ratio estimate across the proposed portfolio to ensure cost transparency.</p>
       </div>
       <div class="output-card">
-        <div class="oc-icon">🔬</div>
+        <div class="oc-icon"><i data-lucide="microscope"></i></div>
         <h4>ETF Look-Through</h4>
         <p>Underlying exposure analysis to identify and flag overlaps or concentration risks.</p>
       </div>
@@ -420,7 +421,7 @@
     <div class="section-label">Customisation</div>
     <h2>Adapt the strategies to your needs</h2>
     <div class="feat-card" style="max-width:680px;">
-      <div class="feat-icon-box">🛠️</div>
+      <div class="feat-icon-box"><i data-lucide="wrench"></i></div>
       <div>
         <p>The built-in strategies are a starting point, not a constraint. Via a configuration file you can modify existing strategies, extend them with new logic, or build entirely custom ones — without touching the core application.</p>
         <a href="https://github.com/volkmarritter/allocation-prompt-engine/blob/main/config.js" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:1rem;display:inline-flex;align-items:center;gap:0.4em;">View config file on GitHub</a>
@@ -494,5 +495,6 @@
   </div>
 </footer>
 
+<script>lucide.createIcons();</script>
 </body>
 </html>
