@@ -501,7 +501,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 /* ── VIDEO DEMO ── */
 .video-section { padding: 80px 5%; background: var(--bg); }
 .video-wrap {
-  max-width: 800px; margin: 2rem auto 0;
+  max-width: 100%; margin: 2rem auto 0;
   border-radius: 16px; overflow: hidden;
   box-shadow: var(--shadow-lg); background: #000;
 }
